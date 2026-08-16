@@ -1,0 +1,321 @@
+Index: 00-start-here.md
+===================================================================
+--- 00-start-here.md	before
++++ 00-start-here.md	after
+@@ -1,3 +1,14 @@
+ # Hunk Tutor
+ 
+-This is a practice review.
++TOP OF REVIEW — Start Here.
++This diff is the tutorial.
++You are not editing a project.
++Changed lines teach Hunk.
++Each shortcut has a purpose.
++
++Keep the Tutor pane open.
++It shows one configured key.
++Follow the exact-text spotlight.
++
++> Lost? Open controls help.
++> Restart from Extensions.
+
+Index: 01-moving-through-a-review.md
+===================================================================
+--- 01-moving-through-a-review.md	before
++++ 01-moving-through-a-review.md	after
+@@ -1,8 +1,11 @@
+-# Lesson 1 — Move through a review
++# Lesson 1 — Follow the trail
+ 
+ ## Nearby rows
+-The highlight marks your place.
+-Move around the document.
++START HERE — open controls help.
++STEP DOWN — you moved down one row.
++PREVIOUS HUNK — back at first hunk.
++LESSON 1 RETURN — back one file.
++Tint confirms your last arrival.
+ 
+ Tip 01 — highlight = your place.
+ Tip 02 — movement never edits.
+@@ -16,5 +19,8 @@
+ Tip 10 — next change is below.
+ 
+ ## Changed blocks and files
++NEXT HUNK — reached next change.
+ A hunk groups nearby changed lines.
+-Move between changes and files.
++Next-file lands on next lesson.
++Previous-file returns one lesson.
++Top and bottom span the review.
+
+Index: 02-scrolling-and-panning.md
+===================================================================
+--- 02-scrolling-and-panning.md	before
++++ 02-scrolling-and-panning.md	after
+@@ -1,50 +1,51 @@
+-# Lesson 2 — Cover distance
++# LESSON 2 START — Cover distance
+ 
+ One line below is extra wide.
+-Pan across this placeholder.
++Keep wrapping off for this hunt.
++PAN RIGHT once → PAN LEFT once ← code moves while gutters stay fixed ................................................................................ distant columns stay available without wrapping.
+ 
+-Practice row 01
+-Practice row 02
+-Practice row 03
+-Practice row 04
++START — row steps are precise.
++Row 02 — distance made visible.
++Row 03 — distance made visible.
++Row 04 — distance made visible.
+ HALF-PAGE CHECKPOINT — made it.
+-Practice row 06
+-Practice row 07
+-Practice row 08
+-Practice row 09
++Row 06 — distance made visible.
++Row 07 — distance made visible.
++Row 08 — distance made visible.
++Row 09 — distance made visible.
+ PAGE CHECKPOINT — made it.
+-Practice row 11
+-Practice row 12
+-Practice row 13
+-Practice row 14
+-Practice row 15
+-Practice row 16
+-Practice row 17
+-Practice row 18
+-Practice row 19
+-Practice row 20
+-Practice row 21
+-Practice row 22
+-Practice row 23
+-Practice row 24
+-Practice row 25
+-Practice row 26
++Row 11 — distance made visible.
++Row 12 — distance made visible.
++Row 13 — distance made visible.
++Row 14 — distance made visible.
++Row 15 — distance made visible.
++Row 16 — distance made visible.
++Row 17 — distance made visible.
++Row 18 — distance made visible.
++Row 19 — distance made visible.
++Row 20 — distance made visible.
++Row 21 — distance made visible.
++Row 22 — distance made visible.
++Row 23 — distance made visible.
++Row 24 — distance made visible.
++Row 25 — distance made visible.
++Row 26 — distance made visible.
+ CHECKPOINT B — mix pages and rows.
+-Practice row 28
+-Practice row 29
+-Practice row 30
+-Practice row 31
+-Practice row 32
+-Practice row 33
+-Practice row 34
+-Practice row 35
+-Practice row 36
+-Practice row 37
+-Practice row 38
+-Practice row 39
+-Practice row 40
+-Practice row 41
+-Practice row 42
++Row 28 — distance made visible.
++Row 29 — distance made visible.
++Row 30 — distance made visible.
++Row 31 — distance made visible.
++Row 32 — distance made visible.
++Row 33 — distance made visible.
++SCAN TIP — page, then row.
++Row 35 — distance made visible.
++Row 36 — distance made visible.
++Row 37 — distance made visible.
++Row 38 — distance made visible.
++Row 39 — distance made visible.
++Row 40 — distance made visible.
++Row 41 — distance made visible.
++END — page-up returns.
+ 
+ Hidden 01 — long context folds.
+ Hidden 02 — changes stay central.
+@@ -58,4 +59,8 @@
+ Hidden 10 — context can matter.
+ 
+ ## Folded context
+-Expand context when setup matters.
++The collapsed section hides a guide.
++Expand it to reveal the message.
++Pages expose distant rows.
++Panning exposes distant columns.
++Expansion exposes folded context.
+
+Index: 03-shaping-the-view.md
+===================================================================
+--- 03-shaping-the-view.md	before
++++ 03-shaping-the-view.md	after
+@@ -1,5 +1,16 @@
+-# Lesson 3 — View settings
++# LESSON 3 START — Shape the view
+ 
+-Choose a presentation.
+-Show useful chrome.
+-Try a color theme.
++SPLIT RESULT — compare side by side.
++STACK RESULT — use the full width.
++AUTO RESULT — fit this terminal.
++
++LINE RESULT — gutter chrome changed.
++WRAP RESULT — this deliberately long explanation changes shape when wrapping toggles, showing how a narrow pane can trade horizontal scanning for extra vertical rows.
++HEADER RESULT — ranges changed.
++
++THEME RESULT — palette changed.
++Diff meaning stayed the same.
++MENU RESULT — top chrome changed.
++F10 still opens every menu.
++SIDEBAR HANDOFF — hide Tutor now.
++It reopens at LESSON 4 START.
+
+Index: 04-find-a-file/haystack-a.md
+===================================================================
+--- 04-find-a-file/haystack-a.md	before
++++ 04-find-a-file/haystack-a.md	after
+@@ -1,3 +1,5 @@
+-# Filtering
++# Filtering: haystack A
+ 
+-Many files can share one review.
++This file vanishes for `needle`.
++Filtering narrows the review.
++It does not alter the changeset.
+
+Index: 04-find-a-file/needle.md
+===================================================================
+--- 04-find-a-file/needle.md	before
++++ 04-find-a-file/needle.md	after
+@@ -1,3 +1,14 @@
+-# Filtering
++# LESSON 4 START — Find the signal
+ 
+-Find one file.
++FILTER FOCUS — input is ready.
++Type `needle`; watch files vanish.
++FILTER MATCH — only visible file.
++You made it; Escape restores all.
++FILTER CLEAR — full guide returned.
++
++FOCUS RESULT — review owns keys.
++Selection stayed on this file.
++REFRESH RESULT — guide unchanged.
++A real review reloads its source.
++EDITOR HANDOFF — try `$EDITOR`.
++No project file will be touched.
+
+Index: 04-find-a-file/haystack-b.md
+===================================================================
+--- 04-find-a-file/haystack-b.md	before
++++ 04-find-a-file/haystack-b.md	after
+@@ -1,3 +1,5 @@
+-# Filtering
++# Filtering: haystack B
+ 
+-Many files can share one review.
++This also vanishes for `needle`.
++It returns when the query clears.
++File order remains stable.
+
+Index: 05-context-and-notes.md
+===================================================================
+--- 05-context-and-notes.md	before
++++ 05-context-and-notes.md	after
+@@ -1,8 +1,10 @@
+-# Lesson 5 — Context and notes
++# LESSON 5 START — Add context
+ 
+ ## Agent explanations
+-A changed hunk can have rationale.
+-Read the change alone.
++AGENT NOTE RESULT — why is visible.
++PREVIOUS NOTE RESULT — back at why.
++DRAFT RESULT — composer opens here.
++SAVE RESULT — your note stays here.
+ 
+ Tip 01 — highlight = your place.
+ Tip 02 — movement never edits.
+@@ -16,5 +18,8 @@
+ Tip 10 — next change is below.
+ 
+ ## Human review notes
+-A reviewer can ask a question.
+-Keep the question elsewhere.
++NEXT NOTE RESULT — question hunk.
++Explained changes can be distant.
++You made it; return to prior note.
++Human questions stay beside code.
++NEXT LESSON — continue one file.
+
+Index: 06-how-the-tutor-works.md
+===================================================================
+--- 06-how-the-tutor-works.md	before
++++ 06-how-the-tutor-works.md	after
+@@ -1,3 +1,19 @@
+-# Lesson 6 — Extensions
++# LESSON 6 START — Extensions
+ 
+-Extensions add behavior.
++EXTENSION RESULT — Tutor is proof.
++This sidebar uses the public API.
++Spotlights use exact diff text.
++Lesson entries reveal exact lines.
++It adds commands and event handlers.
++It transforms the guide changeset.
++
++KEYMAP RESULT — controls use yours.
++FINISH CHECKPOINT — open the dialog.
++Tutor listens for command names.
++It does not hard-code keys.
++Steps follow live `[keybindings]`.
++Other extensions use these APIs.
++They can add views and dialogs.
++They can add review tools.
++
++Confirm to complete this trail.
+
+Index: 07-finish-and-next-steps.md
+===================================================================
+--- 07-finish-and-next-steps.md	before
++++ 07-finish-and-next-steps.md	after
+@@ -1,3 +1,24 @@
+-# Next
++# Finish — use Hunk on a real change
+ 
+-Open a review.
++BOTTOM OF REVIEW — you made it.
++You can move through a review.
++You can shape and filter it.
++You can add review context.
++Shortcuts serve one question:
++what changed, and why?
++
++Try one after leaving Tutor:
++
++- working tree: `hunk diff`
++- staged: `hunk diff --staged`
++- commit: `hunk show HEAD~1`
++- stash: `hunk stash show`
++- patch: `hunk patch change.diff`
++- rationale: `--agent-context`
++- live reload: `hunk diff --watch`
++
++Use the mouse when it is natural.
++Drag diff text to copy it.
++Primary actions keep key parity.
++Open controls for a reminder.
++Quit when the diff is understood.

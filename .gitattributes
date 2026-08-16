@@ -1,0 +1,2 @@
+# A leading space is the required unified-diff marker for blank context lines.
+tutor.patch -whitespace
