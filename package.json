@@ -20,21 +20,20 @@
   },
   "files": [
     "src",
-    "tutor.patch",
     "README.md",
     "LICENSE"
   ],
   "type": "module",
   "scripts": {
-    "tutor": "hunk patch ./tutor.patch --extension . --theme hunk-tutor --mode stack",
-    "generate:patch": "bun run ./scripts/generate-patch.ts",
-    "check:patch": "bun run ./scripts/generate-patch.ts --check",
-    "test": "bun run check:patch && bun test ./tests"
+    "tutor": "hunk diff --extension . --theme hunk-tutor --mode stack",
+    "test": "bun test ./tests"
+  },
+  "dependencies": {
+    "diff": "^8.0.3"
   },
   "devDependencies": {
     "@types/bun": "^1.3.14",
     "@types/react": "^19.2.14",
-    "diff": "^8.0.3",
     "react": "^19.2.4"
   },
   "packageManager": "bun@1.3.14",

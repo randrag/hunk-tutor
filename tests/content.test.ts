@@ -1,7 +1,9 @@
 import { describe, expect, test } from "bun:test";
+import { resolve } from "node:path";
 import { getTutorDocumentText, TUTOR_PATHS } from "../src/content";
+import { buildTutorPatch, detectTutorReview, loadTutorReview } from "../src/reviewSource";
 
-const TUTOR_PATCH = await Bun.file(new URL("../tutor.patch", import.meta.url)).text();
+const TUTOR_PATCH = buildTutorPatch();
 
 describe("tutor content", () => {
   test("keeps the synthetic review entirely instructional", () => {
@@ -74,5 +76,23 @@ describe("tutor content", () => {
     ]) {
       expect(TUTOR_PATCH).toContain(phrase);
     }
+  });
+
+  test("loads through a checkout-scoped review adapter with exact source sides", async () => {
+    const tutorRoot = resolve(import.meta.dir, "..");
+    expect(detectTutorReview(tutorRoot)?.id).toBe("tutor");
+    expect(detectTutorReview(resolve(tutorRoot, "src"))?.id).toBe("tutor");
+    expect(detectTutorReview(resolve(tutorRoot, ".."))).toBeNull();
+
+    const review = await loadTutorReview();
+    expect(review.patchText).toBe(TUTOR_PATCH);
+    expect(
+      await review.readFileSource?.({
+        path: "02-scrolling-and-panning.md",
+        changeType: "change",
+        isUntracked: false,
+        side: "new",
+      }),
+    ).toContain("YOU REVEALED THE FOLDED GUIDE");
   });
 });

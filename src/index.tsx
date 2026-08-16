@@ -7,6 +7,7 @@ import type {
   HunkExtensionAPI,
 } from "hunkdiff/extension";
 import { getTutorDocumentText, TUTOR_PATHS } from "./content";
+import { detectTutorReview, loadTutorReview, TUTOR_VCS_ID } from "./reviewSource";
 
 const TUTOR_HIGHLIGHTER_ID = "active-step";
 
@@ -763,6 +764,19 @@ function annotateTutorChangeset(changeset: ExtensionChangeset): ExtensionChanges
 /** Register the interactive tutor using the same public surface third-party extensions receive. */
 export default function registerTutor(hunk: HunkExtensionAPI) {
   hunk.configureSession({ viewPreferences: "transient" });
+  hunk.registerVcsAdapter({
+    id: TUTOR_VCS_ID,
+    name: "Hunk Tutor",
+    detect: detectTutorReview,
+    // The adapter only recognizes this checkout. Winning its same-root tie with
+    // Git makes `hunk diff --extension .` the complete tutorial entrypoint.
+    detectionPriority: 1,
+    operations: {
+      "working-tree-diff": {
+        load: loadTutorReview,
+      },
+    },
+  });
   hunk.registerTheme({
     id: "hunk-tutor",
     label: "Hunk Tutor",

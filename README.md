@@ -18,6 +18,7 @@ Clone the repository:
 ```bash
 git clone https://github.com/mikeclarke/hunk-tutor.git
 cd hunk-tutor
+bun install
 ```
 
 Then run the convenient script:
@@ -29,19 +30,20 @@ bun run tutor
 That script expands to the full Hunk command below:
 
 ```bash
-hunk patch ./tutor.patch \
+hunk diff \
   --extension . \
   --theme hunk-tutor \
   --mode stack
 ```
 
-No install step is required. `--extension .` explicitly loads this checkout for this one Hunk session, while `tutor.patch` supplies a synthetic review that cannot modify your project.
+`--extension .` explicitly loads this checkout for one Hunk session. The extension's checkout-scoped review adapter supplies the synthetic changeset and its exact old/new documents in memory, so there is no generated patch file and nothing in your project can be modified.
 
-You can also run it from any directory with absolute paths:
+Or run the full command directly from the checkout:
 
 ```bash
-hunk patch ~/Code/hunk-tutor/tutor.patch \
-  --extension ~/Code/hunk-tutor \
+cd ~/Code/hunk-tutor
+hunk diff \
+  --extension . \
   --theme hunk-tutor \
   --mode stack
 ```
@@ -51,9 +53,9 @@ hunk patch ~/Code/hunk-tutor/tutor.patch \
 If your installed `hunk` is still 0.18.2, run the compatible Hunk source tree directly until API v5 reaches a release:
 
 ```bash
-cd ~/Code/hunk
-bun run src/main.tsx -- patch ../hunk-tutor/tutor.patch \
-  --extension ../hunk-tutor \
+cd ~/Code/hunk-tutor
+bun run ../hunk/src/main.tsx -- diff \
+  --extension . \
   --theme hunk-tutor \
   --mode stack
 ```
@@ -62,7 +64,7 @@ Follow the **NEXT ACTION** card in the Tutor pane. Its key labels come from your
 
 ## Why it is loaded explicitly
 
-The tutor is a guided session, not an always-on enhancement for normal reviews. Running it with `--extension` keeps its pane, transient view settings, theme, and progress tracking scoped to the practice patch. You do not need to copy it into `~/.config/hunk/extensions` or run `hunk extension install`.
+The tutor is a guided session, not an always-on enhancement for normal reviews. Running it with `--extension` keeps its pane, transient view settings, theme, and progress tracking scoped to the practice review. You do not need to copy it into `~/.config/hunk/extensions` or run `hunk extension install`.
 
 The extension also checks the exact practice-file set before opening its welcome dialog. Accidentally loading it against an ordinary diff will not replace the file pane.
 
@@ -80,8 +82,7 @@ The extension also checks the exact practice-file set before opening its welcome
 ```text
 src/index.tsx       extension entrypoint and lesson state machine
 src/content.ts      before/after documents that make up the lessons
-tutor.patch         generated synthetic review loaded by Hunk
-scripts/            deterministic patch generator
+src/reviewSource.ts checkout-scoped adapter that builds the review in memory
 tests/              content and exact-spotlight contract tests
 ```
 
@@ -94,12 +95,7 @@ bun install
 bun run test
 ```
 
-After editing lesson documents, regenerate the checked-in patch:
-
-```bash
-bun run generate:patch
-bun run test
-```
+The review is derived directly from `src/content.ts`, so editing a lesson requires no generated-file step.
 
 For a real terminal check, run `bun run tutor` and complete the trail. The tutor uses only Hunk's public extension API; `react` is a development dependency for local tests and is supplied by Hunk at runtime.
 

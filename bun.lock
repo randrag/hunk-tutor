@@ -4,10 +4,12 @@
   "workspaces": {
     "": {
       "name": "hunk-tutor",
+      "dependencies": {
+        "diff": "^8.0.3",
+      },
       "devDependencies": {
         "@types/bun": "^1.3.14",
         "@types/react": "^19.2.14",
-        "diff": "^8.0.3",
         "react": "^19.2.4",
       },
     },
