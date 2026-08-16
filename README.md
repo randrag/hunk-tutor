@@ -2,6 +2,8 @@
 
 Learn [Hunk](https://github.com/modem-dev/hunk) inside Hunk. The extension opens a six-lesson practice review, watches the commands you actually run, and highlights the exact checkpoint where each action lands.
 
+https://github.com/user-attachments/assets/4a5b6ef1-389b-46a5-92e3-9dd2f7e78570
+
 ## Requirements
 
 - [Hunk](https://github.com/modem-dev/hunk) with extension API v5 or newer
